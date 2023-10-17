@@ -1,0 +1,24 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  background: darkblue;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 400px;
+  height: 400px;
+  margin: 100px;
+  padding: 10px;
+  text-align: center;
+  font-size:20px;
+  border-radius: 15px;
+}
+
+address{
+  font-style: normal;
+  font-size:20px;
+}
