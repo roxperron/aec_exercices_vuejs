@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
-    <title>Exercice 1 </title>
-</head>
-<body>
+    <title>Exercice 1</title>
+  </head>
+  <body>
     <div id="app">
-       <h1 v-on:click="changeName">{{firstName}} {{lastName}}</h1>
-       <hr>
-       <h2>{{email}}</h2>
-       <h2>{{phoneNumber}}</h2>
+      <div
+        :class="[address.city == 'Trois-Rivières' ? colorTR : colorOther]"
+        class="userCard"
+      >
+        <img class="imgUser" v-on:click="changeUserImg" v-bind:src="imgUser" />
 
-       <address>{{address.civicNumber}} {{address.streetName}}</address>
-       <address v-on:click="changeCity">{{address.city}}</address>
-       <address>{{address.postalCode}}</address>
+        <h1 v-on:click="changeName">{{firstName}} {{lastName}}</h1>
+        <hr />
+        <h2>{{email}}</h2>
+        <h2>{{phoneNumber}}</h2>
 
-      <h3 v-on:click="changeHobbies">{{hobbies[0]}} {{hobbies[1]}}</h3>
-   
-        
+        <address>{{address.civicNumber}} {{address.streetName}}</address>
+        <address v-on:click="changeCity">{{address.city}}</address>
+        <address>{{address.province}}, {{address.postalCode}}</address>
 
+        <h3 v-on:click="changeHobbies">{{hobbies[0]}} {{hobbies[1]}}</h3>
+
+        <button class="websiteButton">
+          <a class="websiteLink" :href="websiteUser" target="_blank">Website</a>
+        </button>
+      </div>
     </div>
-    
+
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
