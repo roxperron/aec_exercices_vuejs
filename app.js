@@ -12,6 +12,7 @@ const app = Vue.createApp({
         streetName: "Rue des Pins",
         city: "Trois-Rivières",
         province: "Québec",
+        provinceQc: "/quebec.png",
         postalCode: "J8S 9S6",
       },
 
@@ -39,7 +40,6 @@ const app = Vue.createApp({
     changeProvince(){
       let newProvince = prompt("Entrez votre province");
       this.address.province = newProvince;
-
     },
 
     addHobbie() {

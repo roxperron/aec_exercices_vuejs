@@ -19,8 +19,9 @@
 
         <address>{{address.civicNumber}} {{address.streetName}}</address>
         <address v-on:click="changeCity">{{address.city}}</address>
-        <address v-on:click="changeProvince">{{address.province}}</address>
-        <address>{{address.postalCode}}</address>
+        <address v-on:click="changeProvince"  >{{address.province}},  {{address.postalCode}}</address>
+        <span v-show="address.province == 'Québec'" ><img src="/quebec.png" alt=""></span>
+
 
         <ul class="hobbies-list">
           <li class="hobbie-item" v-for="hobbie in hobbies">{{hobbie}}<button @click="removeHobbie">X</button></li> 
