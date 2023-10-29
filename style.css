@@ -6,10 +6,11 @@ body{
 
 .userCard {
   color: #fff;
+/*   background: green; */
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   width: 400px;
-  height: 575px;
+  height: auto;
   margin: 100px;
   padding: 10px;
   text-align: center;
@@ -22,30 +23,53 @@ address{
   font-size:20px;
 }
 
-.imgUser{
+.userImg{
   width: 20%;
   border-radius: 10px;
 }
 
-.websiteButton{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  border: 1px solid white;
-  border-radius: 5px;
-  color: black;
-  background: white;
-  padding: 15px;
-  text-decoration: none;
-}
-
 .websiteLink{
-  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 15px;
+  border-radius: 5px;
 }
 
-.colorTR{
+a{
+  text-decoration: none;
+  color:darkblue;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.newCity{
+  background: darkblue;
+}
+
+.colorCity{
   background: green;
 }
 
-.colorOther{
-  background-color: darkblue;
+.hobbies-list{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
+.hobbie-item{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  color:#000;
+  padding:5px;
+  margin-bottom:2px;
+}
+
+.addContainer{
+  display: flex;
+  justify-content:flex-start;
+  padding: 5px;
+}
+
+
+

@@ -2,7 +2,6 @@ const app = Vue.createApp({
   /*   template: "<h1>TEST</h1>", */
   data() {
     return {
-     
       firstName: "Pierre",
       lastName: "Laroche",
       email: "pierrelaroche@gmail.com",
@@ -12,55 +11,49 @@ const app = Vue.createApp({
         civicNumber: 1585,
         streetName: "Rue des Pins",
         city: "Trois-Rivières",
-        province:"Québec",
+        province: "Québec",
         postalCode: "J8S 9S6",
       },
 
-      hobbies: ["Sport", "Lecture", "Jeux vidéos", "Dessin", "Cuisine"],
-      imgUser:"https://randomuser.me/api/portraits/lego/6.jpg",
-      websiteUser:"https://www.nintendo.com/en-ca/",
-      colorTR:"colorTR",
-      colorOther:"colorOther"
+      hobbies: ["Sport", "Lecture"],
+      userImg: "https://randomuser.me/api/portraits/lego/6.jpg",
+      userWebsite: "https://www.nintendo.com/fr-ca/",
+      colorNewCity:"newCity",
+      colorCity: "colorCity"
+
     };
   },
-  methods:{
-    changeName(){
-        let newFirstName= prompt("Entrez un prénom");
-        this.firstName = newFirstName;
-        let newLastName= prompt("Entrez un nom de famille");
-        this.lastName = newLastName;
+  methods: {
+    changeName() {
+      let newFirstName = prompt("Entrez un prénom");
+      this.firstName = newFirstName;
+      let newLastName = prompt("Entrez un nom de famille");
+      this.lastName = newLastName;
+    },
+
+    changeCity() {
+      let newCity = prompt("Entrez le nom de la ville");
+      this.address.city = newCity;
+    },
+
+    changeProvince(){
+      let newProvince = prompt("Entrez votre province");
+      this.address.province = newProvince;
 
     },
 
-    changeCity(){
-        let newCity = prompt("Entrez le nom de la ville");
-        this.address.city = newCity;
-
+    addHobbie() {
+      let newHobbie = prompt("Entrez un nouveau hobbie");
+      this.hobbies.push(newHobbie)
     },
 
-    changeHobbies(){
-        let newHobbie1 = prompt("Entrez un hobbie");
-        let newHobbie2 = prompt("Entrez un hobbie");
-        this.hobbies[0] = newHobbie1;
-        this.hobbies[1] = newHobbie2;
-
+    removeHobbie(){
+      this.hobbies.pop();
     },
 
-    changeUserImg(){
-      this.imgUser = "https://randomuser.me/api/portraits/lego/2.jpg"
+    changeUserImg() {
+      this.userImg = "https://randomuser.me/api/portraits/lego/2.jpg";
     },
-
-    goUserWebsite(){
-      this.websiteUser= "https://www.nintendo.com/en-ca/"
-    }
   },
-  
-  computed:{
-    colorCity(){
-      return{
-        city : this.newCity != Trois-Rivière
-      }
-    }
-  }
 });
 app.mount("#app");

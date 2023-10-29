@@ -9,11 +9,8 @@
   </head>
   <body>
     <div id="app">
-      <div
-        :class="[address.city == 'Trois-Rivières' ? colorTR : colorOther]"
-        class="userCard"
-      >
-        <img class="imgUser" v-on:click="changeUserImg" v-bind:src="imgUser" />
+      <div class="userCard" :class="[address.city != 'Trois-Rivières' ? colorNewCity : colorCity]" >
+       <img @click="changeUserImg"class="userImg" :src="userImg" alt="Photo de l'utilisateur">
 
         <h1 v-on:click="changeName">{{firstName}} {{lastName}}</h1>
         <hr />
@@ -22,13 +19,23 @@
 
         <address>{{address.civicNumber}} {{address.streetName}}</address>
         <address v-on:click="changeCity">{{address.city}}</address>
-        <address>{{address.province}}, {{address.postalCode}}</address>
+        <address v-on:click="changeProvince">{{address.province}}</address>
+        <address>{{address.postalCode}}</address>
 
-        <h3 v-on:click="changeHobbies">{{hobbies[0]}} {{hobbies[1]}}</h3>
+        <ul class="hobbies-list">
+          <li class="hobbie-item" v-for="hobbie in hobbies">{{hobbie}}<button @click="removeHobbie">X</button></li> 
+        </ul>
 
-        <button class="websiteButton">
-          <a class="websiteLink" :href="websiteUser" target="_blank">Website</a>
-        </button>
+        <div class="addContainer">
+          <button @click="addHobbie">+</button>
+        </div>
+       
+        <div>
+          <button class="websiteLink">
+            <a :href="userWebsite" target="_blank">Website</a>
+          </button>
+        </div>
+       
       </div>
     </div>
 
